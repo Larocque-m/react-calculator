@@ -7,9 +7,22 @@ const Calculation = () => {
   const [answer, setAnswer] = useState('')
   const [error, setError] = useState('')
 
-  const updatValue = (event) => {
-    setValue ()
+  const validAnswer = () => 
+    !Number.isNaN(Number(firstInput)) && !Number.isNaN(Number(secondInput)) &&
+    firstInput !== '' && secondInput !== ''
+
+  const calculation = () => {
+    if (!validAnswer(firstInput) || !validAnswer(secondInput)) {
+      return setError('Please provide a vaild number for both inputs')
+    }
+
+    setError('')
+    setAnswer('')
   }
+
+}
+  
+
 
   return (
     <div className='Calculator'>
