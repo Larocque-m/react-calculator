@@ -25,7 +25,9 @@ const Calculation = () => {
       </select>
       <input type='text' name='secondInput' value={secondInput} onChange={event =>
         setSecondInput(event.target.value)} /> 
-    
+      <button type='button' value='=' onClick={calculation} />
+      <input type='text' value={equation} disabled />
+      <div className='error'>{error}</div>
     </div>
 
   )
