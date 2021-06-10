@@ -12,12 +12,12 @@ const Calculation = () => {
     firstInput !== '' && secondInput !== ''
 
   const calculation = () => {
+    setError('')
+    setAnswer('')
+    
     if (!validAnswer(firstInput) || !validAnswer(secondInput)) {
       return setError("Please provide a vaild number for both inputs")
     }
-
-    setError('')
-    setAnswer('')
 
     switch (operator) {
       case 'add':
@@ -46,15 +46,15 @@ const Calculation = () => {
         setFirstInput(event.target.value)} />
       <select name="operator" value={operator} onChange={event => 
         setOperator(event.target.value)} >
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="/">/</option>
-        <option value="*">*</option>
+        <option value="add">+</option>
+        <option value="subtract">-</option>
+        <option value="divide">/</option>
+        <option value="multiply">*</option>
       </select>
       <input type="text" name="secondInput" value={secondInput} onChange={event =>
         setSecondInput(event.target.value)} /> 
-      <button type="button" value="=" onClick={calculation} />
-      <input type="text" value={answer} disabled />
+      <button type="button" value="=" onClick={calculation}>=</button>
+      <input type="text" className="display" value={answer} disabled />
       <div className="error">{error}</div>
     </div>
 
