@@ -4,6 +4,8 @@ const Calculation = () => {
   const [firstInput, setFirstInput] = useState('')
   const [secondInput, setSecondInput] = useState('')
   const [operator, setOperator] = useState('')
+  const [answer, setAnswer] = useState('')
+  const [error, setError] = useState('')
 
   const updatValue = (event) => {
     setValue ()
